@@ -3,6 +3,7 @@
 // Types
 export interface PersonalInfo {
   name: string
+  professionalTitle: string
   description: string
   contact: {
     personalNumber: string
@@ -16,6 +17,7 @@ export interface PersonalInfo {
     platform: string
     url?: string
     username?: string
+    icon?: string
   }[]
 }
 
@@ -47,6 +49,14 @@ export interface Language {
   details?: string
 }
 
+export interface SectionTitles {
+  info: string
+  skills: string
+  languages: string
+  education: string
+  workExperience: string
+}
+
 export interface CV {
   personalInfo: PersonalInfo
   education: Education[]
@@ -55,12 +65,14 @@ export interface CV {
     technical: Skill[]
     languages: Language[]
   }
+  sectionTitles: SectionTitles
 }
 
 // CV Data
 export const cvData: CV = {
   personalInfo: {
     name: "Antonio Gallardo Girela",
+    professionalTitle: "FULL STACK DEVELOPER - JAVASCRIPT",
     description:
       "Newly trained Full Stack Developer who is curious, determined and doesn't give up until the problem is solved.",
     contact: {
@@ -222,9 +234,16 @@ export const cvData: CV = {
         level: 4,
         details: "Certificate in Advanced English, Cambridge University",
       },
-      { name: "Swedish", level: 3 },
+      { name: "Swedish", level: 4 },
       { name: "Italian", level: 3 },
     ],
+  },
+  sectionTitles: {
+    info: "INFO",
+    skills: "SKILLS",
+    languages: "LANGUAGES",
+    education: "EDUCATION",
+    workExperience: "WORK EXPERIENCE",
   },
 }
 

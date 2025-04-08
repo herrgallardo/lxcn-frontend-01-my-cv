@@ -2,7 +2,8 @@ import Image from "next/image"
 import cvData from "@/data/cv-data"
 
 const CV = () => {
-  const { personalInfo, education, workExperience, skills } = cvData
+  const { personalInfo, education, workExperience, skills, sectionTitles } =
+    cvData
 
   return (
     <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto my-8 rounded-lg overflow-hidden">
@@ -32,7 +33,7 @@ const CV = () => {
 
         {/* Info/Contact section */}
         <div className="px-8 py-6">
-          <h3 className="text-2xl font-bold mb-4">INFO</h3>
+          <h3 className="text-2xl font-bold mb-4">{sectionTitles.info}</h3>
           <ul className="space-y-4">
             {/* Phone */}
             <li className="flex items-center">
@@ -105,7 +106,7 @@ const CV = () => {
 
         {/* Skills section */}
         <div className="px-8 py-6">
-          <h3 className="text-2xl font-bold mb-4">SKILLS</h3>
+          <h3 className="text-2xl font-bold mb-4">{sectionTitles.skills}</h3>
           <div className="space-y-3">
             {skills.technical.map((skill, index) => (
               <div key={index}>
@@ -123,7 +124,7 @@ const CV = () => {
 
         {/* Languages section */}
         <div className="px-8 py-6">
-          <h3 className="text-2xl font-bold mb-4">LANGUAGES</h3>
+          <h3 className="text-2xl font-bold mb-4">{sectionTitles.languages}</h3>
           <div className="space-y-3">
             {skills.languages.map((language, index) => (
               <div key={index}>
@@ -152,14 +153,14 @@ const CV = () => {
         {/* Header/Title */}
         <div className="mb-8 pt-4">
           <h2 className="text-2xl text-cyan-700 font-bold">
-            FULL STACK DEVELOPER - JAVASCRIPT
+            {personalInfo.professionalTitle}
           </h2>
         </div>
 
         {/* Education section */}
         <div className="mb-10">
           <div className="inline-block bg-cyan-600 text-white py-1 px-4 rounded-md mb-4">
-            <h3 className="font-bold">EDUCATION</h3>
+            <h3 className="font-bold">{sectionTitles.education}</h3>
           </div>
 
           <div className="space-y-6">
@@ -185,7 +186,7 @@ const CV = () => {
         {/* Work Experience section */}
         <div>
           <div className="inline-block bg-cyan-600 text-white py-1 px-4 rounded-md mb-4">
-            <h3 className="font-bold">WORK EXPERIENCE</h3>
+            <h3 className="font-bold">{sectionTitles.workExperience}</h3>
           </div>
 
           <div className="space-y-6">
