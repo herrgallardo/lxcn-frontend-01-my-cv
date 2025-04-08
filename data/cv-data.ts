@@ -136,13 +136,13 @@ export const cvData: CV = {
   workExperience: [
     {
       period: "2023",
-      position: "Praktikant, januari-maj / Sommarjobb, juni-augusti",
+      position: "Intern, January-May / Summer job, June-August",
       company: "Axis Communications",
       location: "Lund",
     },
     {
       period: "2022",
-      position: "Praktikant, april-maj / Sommarjobb, juni-augusti",
+      position: "Intern, April-May / Summer job, June-August",
       company: "24HR, Digitalbyrå",
       location: "Malmö",
     },
@@ -222,7 +222,7 @@ export const cvData: CV = {
         level: 4,
         details: "Certificate in Advanced English, Cambridge University",
       },
-      { name: "Swedish", level: 4 },
+      { name: "Swedish", level: 3 },
       { name: "Italian", level: 3 },
     ],
   },
