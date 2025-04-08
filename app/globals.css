@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@theme {
+  --color-cv-blue: #154a65;
+}

@@ -8,7 +8,7 @@ const CV = () => {
   return (
     <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto my-8 rounded-lg overflow-hidden">
       {/* Left sidebar - dark blue */}
-      <div className="w-full md:w-1/3 bg-cyan-700 text-white">
+      <div className="w-full md:w-1/3 bg-cv-blue text-white">
         {/* Profile section */}
         <div className="flex flex-col items-center pt-10 pb-6">
           <div className="w-48 h-48 rounded-full bg-white overflow-hidden mb-6">
@@ -40,7 +40,7 @@ const CV = () => {
               <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 text-cyan-700"
+                  className="h-4 w-4 text-cv-blue"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -54,7 +54,7 @@ const CV = () => {
               <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 text-cyan-700"
+                  className="h-4 w-4 text-cv-blue"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -69,7 +69,7 @@ const CV = () => {
               <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 text-cyan-700"
+                  className="h-4 w-4 text-cv-blue"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -91,7 +91,7 @@ const CV = () => {
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 text-cyan-700"
+                    className="h-4 w-4 text-cv-blue"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -148,62 +148,116 @@ const CV = () => {
         </div>
       </div>
 
-      {/* Right content area - white/light blue */}
+      {/* Right content area*/}
       <div className="w-full md:w-2/3 bg-white p-8">
         {/* Header/Title */}
         <div className="mb-8 pt-4">
-          <h2 className="text-2xl text-cyan-700 font-bold">
+          <h2 className="text-2xl text-cv-blue font-bold">
             {personalInfo.professionalTitle}
           </h2>
         </div>
 
         {/* Education section */}
         <div className="mb-10">
-          <div className="inline-block bg-cyan-600 text-white py-1 px-4 rounded-md mb-4">
+          <div className="inline-block bg-cv-blue text-white py-1 px-4 rounded-md mb-4">
             <h3 className="font-bold">{sectionTitles.education}</h3>
           </div>
 
-          <div className="space-y-6">
-            {education.map((edu, index) => (
-              <div
-                key={index}
-                className="border-l-4 border-cyan-500 pl-4 ml-4 relative"
-              >
-                <div className="absolute w-4 h-4 bg-cyan-500 rounded-full -left-[10px] top-0"></div>
-                <p className="text-cyan-700 font-semibold">{edu.period}</p>
-                <p className="font-bold">{edu.degree}</p>
-                <p className="text-sm text-gray-600">
-                  {edu.institution}, {edu.location}
-                </p>
-                {edu.grade && (
-                  <p className="text-xs italic text-gray-500">{edu.grade}</p>
-                )}
-              </div>
-            ))}
+          <div className="relative ml-4">
+            {/* Timeline items */}
+            <div className="space-y-6">
+              {education.map((edu, index, array) => {
+                const isLastItem = index === array.length - 1
+
+                return (
+                  <div key={index} className="pl-6 relative">
+                    {/* Circle with white center and blue border */}
+                    <div
+                      className="absolute w-4 h-4 bg-white border-2 border-cv-blue rounded-full z-10"
+                      style={{
+                        left: "0",
+                        top: "6px",
+                        transform: "translateX(-50%)",
+                      }}
+                    ></div>
+
+                    {/* Line segment (not shown for last item) */}
+                    {!isLastItem && (
+                      <div
+                        className="absolute border-l-2 border-cv-blue"
+                        style={{
+                          left: "0",
+                          top: "8px", // Start from middle of dot (4px/2 + 6px)
+                          height: "calc(100% + 30px)", // Connect exactly to the next dot center
+                          transform: "translateX(-50%)",
+                        }}
+                      ></div>
+                    )}
+
+                    {/* Content */}
+                    <p className="text-cv-blue font-semibold">{edu.period}</p>
+                    <p className="font-bold">{edu.degree}</p>
+                    <p className="text-sm text-cv-blue">
+                      {edu.institution}, {edu.location}
+                    </p>
+                    {edu.grade && (
+                      <p className="text-xs italic text-cv-blue">{edu.grade}</p>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
 
         {/* Work Experience section */}
         <div>
-          <div className="inline-block bg-cyan-600 text-white py-1 px-4 rounded-md mb-4">
+          <div className="inline-block bg-cv-blue text-white py-1 px-4 rounded-md mb-4">
             <h3 className="font-bold">{sectionTitles.workExperience}</h3>
           </div>
 
-          <div className="space-y-6">
-            {workExperience.map((work, index) => (
-              <div
-                key={index}
-                className="border-l-4 border-cyan-500 pl-4 ml-4 relative"
-              >
-                <div className="absolute w-4 h-4 bg-cyan-500 rounded-full -left-[10px] top-0"></div>
-                <p className="text-cyan-700 font-semibold">{work.period}</p>
-                <p className="font-bold">{work.position}</p>
-                <p className="text-sm">
-                  {work.company && `${work.company}, `}
-                  {work.location}
-                </p>
-              </div>
-            ))}
+          <div className="relative ml-4">
+            {/* Timeline items */}
+            <div className="space-y-6">
+              {workExperience.map((work, index, array) => {
+                const isLastItem = index === array.length - 1
+
+                return (
+                  <div key={index} className="pl-6 relative">
+                    {/* Circle with white center and blue border */}
+                    <div
+                      className="absolute w-4 h-4 bg-white border-2 border-cv-blue rounded-full z-10"
+                      style={{
+                        left: "0",
+                        top: "6px",
+                        transform: "translateX(-50%)",
+                      }}
+                    ></div>
+
+                    {/* Line segment (not shown for last item) */}
+                    {!isLastItem && (
+                      <div
+                        className="absolute border-l-2 border-cv-blue"
+                        style={{
+                          left: "0",
+                          top: "8px", // Start from middle of dot (4px/2 + 6px)
+                          height: "calc(100% + 30px)", // Connect exactly to the next dot center
+                          transform: "translateX(-50%)",
+                        }}
+                      ></div>
+                    )}
+
+                    {/* Content */}
+                    <p className="text-cv-blue font-semibold">{work.period}</p>
+                    <p className="font-bold">{work.position}</p>
+                    <p className="text-sm">
+                      {work.company && `${work.company}, `}
+                      {work.location}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
