@@ -12,6 +12,12 @@ export interface PersonalInfo {
     address: string
     city: string
     postalCode: string
+    icons?: {
+      personalNumber?: string
+      phone?: string
+      email?: string
+      address?: string
+    }
   }
   socialMedia: {
     platform: string
@@ -40,12 +46,14 @@ export interface WorkExperience {
 
 export interface Skill {
   name: string
-  level: number // 1-5 scale
+  level?: number // 1-5 scale
+  icon?: string // Path to the icon file
 }
 
 export interface Language {
   name: string
   level: number // 1-5 scale
+  icon?: string // Path to the icon file
   details?: string
 }
 
@@ -82,11 +90,18 @@ export const cvData: CV = {
       address: "Värvädersvägen 6A lgh 1502",
       city: "Lund",
       postalCode: "222 27",
+      icons: {
+        personalNumber: "/icons/id-card-icon.png",
+        phone: "/icons/phone-icon.png",
+        email: "/icons/email-icon.png",
+        address: "/icons/address-icon.png",
+      },
     },
     socialMedia: [
       {
         platform: "LinkedIn",
         username: "Antonio Gallardo Girela",
+        icon: "/icons/linkedin-icon.png",
       },
     ],
   },
@@ -215,35 +230,46 @@ export const cvData: CV = {
   ],
   skills: {
     technical: [
-      { name: "C#", level: 4 },
-      { name: "Java", level: 3 },
-      { name: "JavaScript / TypeScript", level: 4 },
-      { name: "React", level: 4 },
-      { name: "Next.js", level: 4 },
-      { name: "Tailwind", level: 3 },
-      { name: "Framer Motion", level: 2 },
-      { name: "Git", level: 3 },
-      { name: "MongoDB", level: 3 },
-      { name: "GraphQL", level: 3 },
-      { name: "Node", level: 2 },
-      { name: "Express", level: 2 },
-      { name: "Jira", level: 3 },
-      { name: "Elementor Pro", level: 3 },
-      { name: "Photoshop", level: 3 },
+      { name: "C#", icon: "/icons/c-sharp-icon.png" },
+      { name: "CSS", icon: "/icons/css-icon.png" },
+      {
+        name: "Elementor Pro",
+        icon: "/icons/elementor-pro-icon.png",
+      },
+      { name: "Express", icon: "/icons/express-icon.png" },
+      {
+        name: "Framer Motion",
+        icon: "/icons/framer-motion-icon.png",
+      },
+      { name: "Git", icon: "/icons/git-icon.png" },
+      { name: "GraphQL", icon: "/icons/graphql-icon.png" },
+      { name: "HTML", icon: "/icons/html-icon.png" },
+      { name: "Java", icon: "/icons/java-icon.png" },
+      { name: "JavaScript", icon: "/icons/javascript-icon.png" },
+      { name: "Jira", icon: "/icons/jira-icon.png" },
+      { name: "MongoDB", icon: "/icons/mongodb-icon.png" },
+      { name: "Next.js", icon: "/icons/nextjs-icon.png" },
+      { name: "Node", icon: "/icons/nodejs-icon.png" },
+      { name: "Photoshop", icon: "/icons/photoshop-icon.png" },
+      { name: "React", icon: "/icons/react-icon.png" },
+      { name: "Tailwind", icon: "/icons/tailwindcss-icon.png" },
+      { name: "TypeScript", icon: "/icons/typescript-icon.png" },
     ],
     languages: [
       {
         name: "Spanish",
         level: 5,
+        icon: "/icons/spanish-icon.png",
         details: "Native language",
       },
       {
         name: "English",
         level: 4,
+        icon: "/icons/english-icon.png",
         details: "Certificate in Advanced English, Cambridge University",
       },
-      { name: "Swedish", level: 4 },
-      { name: "Italian", level: 3 },
+      { name: "Swedish", level: 4, icon: "/icons/swedish-icon.png" },
+      { name: "Italian", level: 3, icon: "/icons/italian-icon.png" },
     ],
   },
   sectionTitles: {
