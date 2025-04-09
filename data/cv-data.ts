@@ -6,14 +6,12 @@ export interface PersonalInfo {
   professionalTitle: string
   description: string
   contact: {
-    personalNumber: string
     phone: string
     email: string
     address: string
     city: string
     postalCode: string
     icons?: {
-      personalNumber?: string
       phone?: string
       email?: string
       address?: string
@@ -84,14 +82,12 @@ export const cvData: CV = {
     description:
       "Full Stack Developer with a passion for problem-solving, bringing fresh perspective, tenacious determination, and creative solutions to complex challenges.",
     contact: {
-      personalNumber: "791115-5997",
-      phone: "+46 (0) 73 993 08 48",
+      phone: "+46739930848",
       email: "gallardogirela@gmail.com",
       address: "Värvädersvägen 6A lgh 1502",
       city: "Lund",
       postalCode: "222 27",
       icons: {
-        personalNumber: "/icons/id-card-icon.png",
         phone: "/icons/phone-icon.png",
         email: "/icons/email-icon.png",
         address: "/icons/address-icon.png",

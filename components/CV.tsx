@@ -36,26 +36,6 @@ const CV = () => {
         <div className="px-8 py-8">
           <h3 className="text-2xl font-bold mb-8">{sectionTitles.info}</h3>
           <ul className="space-y-4">
-            {/* Personal Number */}
-            {personalInfo.contact.personalNumber && (
-              <li className="flex items-center">
-                <div className="w-8 h-8 flex items-center justify-center mr-3">
-                  {personalInfo.contact.icons?.personalNumber ? (
-                    <Image
-                      src={personalInfo.contact.icons.personalNumber}
-                      alt="Personal Number"
-                      width={24}
-                      height={24}
-                      className="text-cv-blue"
-                    />
-                  ) : null}
-                </div>
-                <span className="text-sm">
-                  {personalInfo.contact.personalNumber}
-                </span>
-              </li>
-            )}
-
             {/* Phone */}
             <li className="flex items-center">
               <div className="w-8 h-8 flex items-center justify-center mr-3">
