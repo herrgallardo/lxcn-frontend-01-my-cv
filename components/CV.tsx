@@ -69,7 +69,12 @@ const CV = () => {
                   />
                 ) : null}
               </div>
-              <span className="text-sm">{personalInfo.contact.phone}</span>
+              <Link
+                href={`tel:${personalInfo.contact.phone.replace(/\s+/g, "")}`}
+                className="text-sm hover:text-indigo-300 hover:underline transition-colors duration-300"
+              >
+                {personalInfo.contact.phone}
+              </Link>
             </li>
 
             {/* Email */}
@@ -85,7 +90,12 @@ const CV = () => {
                   />
                 ) : null}
               </div>
-              <span className="text-sm">{personalInfo.contact.email}</span>
+              <Link
+                href={`mailto:${personalInfo.contact.email}`}
+                className="text-sm hover:text-indigo-300 hover:underline transition-colors duration-300"
+              >
+                {personalInfo.contact.email}
+              </Link>
             </li>
 
             {/* Address */}

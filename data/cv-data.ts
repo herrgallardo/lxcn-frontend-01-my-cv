@@ -104,6 +104,12 @@ export const cvData: CV = {
         url: "https://www.linkedin.com/in/antonio-gallardo-girela/",
         icon: "/icons/linkedin-icon.png",
       },
+      {
+        platform: "GitHub",
+        username: "herrgallardo",
+        url: "https://github.com/herrgallardo",
+        icon: "/icons/github-icon.png",
+      },
     ],
   },
   education: [
