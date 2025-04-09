@@ -115,14 +115,12 @@ interface PersonalInfo {
   professionalTitle: string
   description: string
   contact: {
-    personalNumber: string
     phone: string
     email: string
     address: string
     city: string
     postalCode: string
     icons?: {
-      personalNumber?: string
       phone?: string
       email?: string
       address?: string
