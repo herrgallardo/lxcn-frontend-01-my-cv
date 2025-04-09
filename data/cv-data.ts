@@ -72,7 +72,7 @@ export interface CV {
 export const cvData: CV = {
   personalInfo: {
     name: "Antonio Gallardo Girela",
-    professionalTitle: "FULL STACK DEVELOPER - JAVASCRIPT",
+    professionalTitle: "FULL STACK DEVELOPER",
     description:
       "Newly trained Full Stack Developer who is curious, determined and doesn't give up until the problem is solved.",
     contact: {
@@ -218,9 +218,17 @@ export const cvData: CV = {
       { name: "C#", level: 4 },
       { name: "Java", level: 3 },
       { name: "JavaScript / TypeScript", level: 4 },
-      { name: "React", level: 3 },
-      { name: "Next", level: 3 },
-      { name: "Elementor Pro", level: 4 },
+      { name: "React", level: 4 },
+      { name: "Next.js", level: 4 },
+      { name: "Tailwind", level: 3 },
+      { name: "Framer Motion", level: 2 },
+      { name: "Git", level: 3 },
+      { name: "MongoDB", level: 3 },
+      { name: "GraphQL", level: 3 },
+      { name: "Node", level: 2 },
+      { name: "Express", level: 2 },
+      { name: "Jira", level: 3 },
+      { name: "Elementor Pro", level: 3 },
       { name: "Photoshop", level: 3 },
     ],
     languages: [

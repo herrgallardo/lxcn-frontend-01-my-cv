@@ -111,11 +111,22 @@ const CV = () => {
             {skills.technical.map((skill, index) => (
               <div key={index}>
                 <span className="block text-sm mb-1">{skill.name}</span>
-                <div className="w-full bg-white rounded-full h-2">
+                <div className="w-full bg-white rounded-full h-2 relative">
+                  {/* Progress bar */}
                   <div
-                    className="bg-cyan-300 h-2 rounded-full"
+                    className="bg-sky-400 h-2 rounded-full absolute top-0 left-0"
                     style={{ width: `${(skill.level / 5) * 100}%` }}
                   ></div>
+                  {/* Level separators */}
+                  <div className="flex w-full h-full absolute top-0 left-0 pointer-events-none">
+                    {[1, 2, 3, 4].map((level) => (
+                      <div
+                        key={level}
+                        className="flex-1 border-r border-cv-blue h-full"
+                      ></div>
+                    ))}
+                    <div className="flex-1"></div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -136,11 +147,22 @@ const CV = () => {
                     </span>
                   )}
                 </span>
-                <div className="w-full bg-white rounded-full h-2">
+                <div className="w-full bg-white rounded-full h-2 relative">
+                  {/* Progress bar */}
                   <div
-                    className="bg-cyan-300 h-2 rounded-full"
+                    className="bg-sky-400 h-2 rounded-full absolute top-0 left-0"
                     style={{ width: `${(language.level / 5) * 100}%` }}
                   ></div>
+                  {/* Level separators */}
+                  <div className="flex w-full h-full absolute top-0 left-0 pointer-events-none">
+                    {[1, 2, 3, 4].map((level) => (
+                      <div
+                        key={level}
+                        className="flex-1 border-r border-cv-blue h-full"
+                      ></div>
+                    ))}
+                    <div className="flex-1"></div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -151,12 +173,11 @@ const CV = () => {
       {/* Right content area*/}
       <div className="w-full md:w-2/3 bg-white p-8">
         {/* Header/Title */}
-        <div className="mb-8 pt-4">
+        <div className="mb-8 pt-4 text-center">
           <h2 className="text-2xl text-cv-blue font-bold">
             {personalInfo.professionalTitle}
           </h2>
         </div>
-
         {/* Education section */}
         <div className="mb-10">
           <div className="inline-block bg-cv-blue text-white py-1 px-4 rounded-md mb-4">
@@ -250,7 +271,7 @@ const CV = () => {
                     {/* Content */}
                     <p className="text-cv-blue font-semibold">{work.period}</p>
                     <p className="font-bold">{work.position}</p>
-                    <p className="text-sm">
+                    <p className="text-sm text-cv-blue">
                       {work.company && `${work.company}, `}
                       {work.location}
                     </p>
