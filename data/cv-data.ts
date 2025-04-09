@@ -82,7 +82,7 @@ export const cvData: CV = {
     name: "Antonio Gallardo Girela",
     professionalTitle: "FULL STACK DEVELOPER",
     description:
-      "Newly trained Full Stack Developer who is curious, determined and doesn't give up until the problem is solved.",
+      "Full Stack Developer with a passion for problem-solving, bringing fresh perspective, tenacious determination, and creative solutions to complex challenges.",
     contact: {
       personalNumber: "791115-5997",
       phone: "+46 (0) 73 993 08 48",
