@@ -101,6 +101,7 @@ export const cvData: CV = {
       {
         platform: "LinkedIn",
         username: "Antonio Gallardo Girela",
+        url: "https://www.linkedin.com/in/antonio-gallardo-girela/",
         icon: "/icons/linkedin-icon.png",
       },
     ],

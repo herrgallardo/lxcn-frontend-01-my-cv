@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import cvData from "@/data/cv-data"
 
 const CV = () => {
@@ -106,7 +107,7 @@ const CV = () => {
               </span>
             </li>
 
-            {/* LinkedIn */}
+            {/* Social Media / LinkedIn */}
             {personalInfo.socialMedia.map((social, index) => (
               <li key={index} className="flex items-center">
                 <div className="w-8 h-8 flex items-center justify-center mr-3">
@@ -120,7 +121,20 @@ const CV = () => {
                     />
                   ) : null}
                 </div>
-                <span className="text-sm">{social.username || social.url}</span>
+                {social.url ? (
+                  <Link
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm hover:text-indigo-300 hover:underline transition-colors duration-300"
+                  >
+                    {social.username}
+                  </Link>
+                ) : (
+                  <span className="text-sm">
+                    {social.username || social.url}
+                  </span>
+                )}
               </li>
             ))}
           </ul>
