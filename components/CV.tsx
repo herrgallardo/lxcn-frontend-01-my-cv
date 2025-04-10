@@ -12,7 +12,7 @@ const CV = () => {
       <div className="w-full md:w-1/3 bg-cv-blue text-white">
         {/* Profile section */}
         <div className="flex flex-col items-center pt-10 pb-6">
-          <div className="w-48 h-48 rounded-full bg-white overflow-hidden mb-6 shadow shadow-black hover:scale-115 transition-all duration-300 hover:shadow-lg">
+          <div className="w-48 h-48 rounded-full bg-white/20 overflow-hidden mb-6 shadow shadow-black hover:scale-115 transition-all duration-300 hover:shadow-lg">
             <Image
               src="/images/profile-image-round.png"
               alt="Profile"
