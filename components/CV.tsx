@@ -203,7 +203,7 @@ const CV = () => {
       {/* Right content area*/}
       <div className="w-full md:w-2/3 bg-white p-8">
         {/* Header/Title */}
-        <div className="mb-8 pt-4 text-center">
+        <div className="mb-8 pt-4 text-center bg-cv-blue/20 text-cv-blue shadow shadow-black/25 py-2 px-4 rounded-md">
           <h2 className="text-2xl text-cv-blue font-bold">
             {personalInfo.professionalTitle}
           </h2>
